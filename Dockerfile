@@ -26,8 +26,6 @@ RUN apt-get update && \
     git checkout `git describe --abbrev=0 --tags` && \
     bash /code/installer.sh && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    # pyenv install && \
-    # pyenv global $(cat .python-version)
 
 ONBUILD RUN bash /code/installer.sh
 
